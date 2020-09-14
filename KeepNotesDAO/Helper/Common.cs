@@ -1,7 +1,5 @@
-﻿#region  Namespace
-namespace KeepNotesDAO.Helper
+﻿namespace KeepNotesDAO.Helper
 {
-    #region Class
     /// <summary>
     /// Class containing common helpful utilities
     /// </summary>
@@ -14,8 +12,5 @@ namespace KeepNotesDAO.Helper
             Ignore
         }
 
-    } 
-    #endregion
+    }
 }
-
-#endregion

@@ -43,7 +43,7 @@ namespace KeepNotesDAO
         /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=.\\sqlexpress;database=KeepNotesDB;User ID=sa;Password=pass@123");
+            optionsBuilder.UseSqlServer("server=.\\sqlexpress;database=KeepNotesDB;User=sa;Password=pass@123");
         }
 
         /// <summary>
@@ -52,15 +52,13 @@ namespace KeepNotesDAO
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasKey(u => u.UserID);
-            modelBuilder.Entity<User>().Property(u => u.UserID).ValueGeneratedNever();
+            modelBuilder.Entity<User>().HasKey(u => u.UserId);
+            modelBuilder.Entity<User>().Property(u => u.UserId).ValueGeneratedNever();
             modelBuilder.Entity<User>().Property(u => u.UserName).IsRequired();
 
             modelBuilder.Entity<Category>().HasKey(c => c.CategoryID);
             modelBuilder.Entity<Category>().Property(c => c.Description).IsRequired();
-            modelBuilder.Entity<Category>().Property(c => c.UserID).IsRequired();
-            modelBuilder.Entity<Category>().HasOne(c => c.User)
-                .WithOne(u => u.Category).HasForeignKey<User>(c => c.UserID);
+            modelBuilder.Entity<Category>().Property(c => c.UserId).IsRequired();
 
             modelBuilder.Entity<Note>().HasKey(n => n.NoteId);
             modelBuilder.Entity<Note>().Property(n => n.Title).IsRequired();
@@ -68,8 +66,6 @@ namespace KeepNotesDAO
                 .IsRequired().HasDefaultValue(StatusType.Pending.ToString());
             modelBuilder.Entity<Note>().Property(n => n.Description).IsRequired();
             modelBuilder.Entity<Note>().Property(n => n.CategoryId).IsRequired();
-            modelBuilder.Entity<Note>().HasOne(n => n.Category)
-                .WithOne(c => c.Note).HasForeignKey<Category>(n => n.CategoryID);
         }
         #endregion
     }

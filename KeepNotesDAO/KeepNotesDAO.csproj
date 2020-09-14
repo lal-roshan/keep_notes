@@ -7,6 +7,16 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200909100810_initial creation.cs" />
     <Compile Remove="Migrations\20200909100810_initial creation.Designer.cs" />
+    <Compile Remove="Migrations\20200910100250_Initial creation.cs" />
+    <Compile Remove="Migrations\20200910100250_Initial creation.Designer.cs" />
+    <Compile Remove="Migrations\20200910101800_Initial creation.cs" />
+    <Compile Remove="Migrations\20200910101800_Initial creation.Designer.cs" />
+    <Compile Remove="Migrations\20200910101857_Initial creation.cs" />
+    <Compile Remove="Migrations\20200910101857_Initial creation.Designer.cs" />
+    <Compile Remove="Migrations\20200910102835_Initial creation.cs" />
+    <Compile Remove="Migrations\20200910102835_Initial creation.Designer.cs" />
+    <Compile Remove="Migrations\20200910174841_CategoryId and NoteID auto generation stopped.cs" />
+    <Compile Remove="Migrations\20200910174841_CategoryId and NoteID auto generation stopped.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,10 +26,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

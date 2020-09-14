@@ -16,18 +16,13 @@
         public string Description { get; set; }
 
         /// <summary>
-        /// The foreign key representing the user who created the category
+        /// The foregin key for saving the user who created the category
         /// </summary>
-        public string UserID { get; set; }
+        public string UserId { get; set; }
 
         /// <summary>
-        /// A property to refer to the User table
+        /// A property for letting category to know that UserId is key of User table
         /// </summary>
         public User User { get; set; }
-
-        /// <summary>
-        /// Property to refer to the Note table
-        /// </summary>
-        public Note Note { get; set; }
     }
 }

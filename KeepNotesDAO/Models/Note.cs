@@ -26,12 +26,12 @@
         public string Status { get; set; }
 
         /// <summary>
-        /// Foreign key representing the category under which the note comes
+        /// The foreign key to identify the category of the note
         /// </summary>
-        public string CategoryId { get; set; }
+        public int CategoryId { get; set; }
 
         /// <summary>
-        /// property to refer to Category table
+        /// property to refer to let note table to know that foreign key categoryID is from table category
         /// </summary>
         public Category Category { get; set; }
     }
